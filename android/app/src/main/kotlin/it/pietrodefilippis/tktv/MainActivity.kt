@@ -26,6 +26,7 @@ class MainActivity : FlutterActivity() {
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
+        TkAggiornamento.registra(flutterEngine, this)
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "tktv/nativo").setMethodCallHandler { call, result ->
             when (call.method) {
                 "appInstallate" -> Thread {
