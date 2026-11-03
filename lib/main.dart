@@ -43,6 +43,12 @@ class AppTkTv extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         title: 'tk-tv',
         debugShowCheckedModeBanner: false,
+        // iPhone: la tastiera non ha un tasto per chiuderla, si chiude toccando fuori dal campo
+        builder: (_, figlio) => GestureDetector(
+          behavior: HitTestBehavior.translucent,
+          onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+          child: figlio,
+        ),
         theme: temaKit(),
         // menu del testo («Incolla», «Copia») e messaggi di sistema in italiano
         locale: const Locale('it'),
