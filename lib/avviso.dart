@@ -48,7 +48,7 @@ class AvvisoListe extends StatelessWidget {
 /// Frase in più del benvenuto di tk-tv: cosa resta sul dispositivo e cosa va in rete.
 const righeBenvenutoTv = [
   'Il link della tua lista resta solo su questo dispositivo. In rete tk-tv contatta gli indirizzi della tua lista '
-      "(canali e loghi) e Dropbox per controllare gli aggiornamenti. L'abbinamento col telefono passa solo dalla "
+      "(canali e loghi)${tkPlay ? '' : ' e Dropbox per controllare gli aggiornamenti'}. L'abbinamento col telefono passa solo dalla "
       'tua rete di casa, senza nessun server esterno.',
 ];
 
