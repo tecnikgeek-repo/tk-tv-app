@@ -77,7 +77,7 @@ Future<List<Canale>> scaricaCanali(String url) async {
   } catch (_) {
     throw 'Lista non raggiungibile: controlla il link e la connessione';
   }
-  if (r.statusCode < 200 || r.statusCode > 299) throw 'Errore HTTP ${r.statusCode}';
+  if (r.statusCode < 200 || r.statusCode > 299) throw 'Il server della lista ha rifiutato la richiesta: controlla il link';
   // come la versione Kotlin (readText): il file si legge in UTF-8
   final canali = leggiM3u(utf8.decode(r.bodyBytes, allowMalformed: true));
   if (canali.isEmpty) throw 'Nessun canale trovato nella lista';

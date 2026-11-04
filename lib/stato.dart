@@ -9,6 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'abbina_server.dart' show linkListaValido;
 import 'canali.dart';
+import 'kit_tk.dart';
 
 const nativo = MethodChannel('tktv/nativo');
 
@@ -60,7 +61,7 @@ class StatoApp extends ChangeNotifier {
       daConfigurare = false;
     } catch (e) {
       caricamento = false;
-      errore = '$e';
+      errore = fraseErrore('Lista non caricata.', e);
       daConfigurare = canali.isEmpty;
     }
     notifyListeners();
